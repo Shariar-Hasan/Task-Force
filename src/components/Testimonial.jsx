@@ -4,7 +4,7 @@ import { testimonials } from "../assets/data/testimonialData"
 import Heading from "./SmallComponents/Heading"
 import TestimoniCard from "./SmallComponents/TestimoniCard"
 import { Fade } from "react-reveal"
-import { Autoplay, Controller, EffectCoverflow, EffectFade, Navigation, Zoom } from "swiper/modules"
+import { Autoplay, Navigation } from "swiper/modules"
 const Testimonial = () => {
     return (
         <div id="testimonials">
