@@ -1,0 +1,353 @@
+@import "Variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: rgb(83, 83, 83);
+}
+body {
+  color: $text;
+  background: $primary;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.sticky-top {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding: 0 15px;
+}
+/// *************loop sections************
+$gridSizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+$genSpacing: 0.25rem;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$breakpoints: (
+  "lg": 992px,
+  "md": 768px,
+  "sm": 576px,
+);
+// conatiner section
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.container-fluid {
+  max-width: 100%;
+}
+// column section
+@each $i in $gridSizes {
+  // normal
+  .col-lg-#{$i} {
+    @media screen {
+      max-width: calc(100% * $i / 12) !important;
+      flex-basis: calc(100% * $i / 12) !important;
+      flex-grow: 1;
+    }
+  }
+  // respncisive
+  // @each $bp, $val in $breakpoints {
+  .col-#{$i} {
+    @media screen and (max-width: $sm) {
+      max-width: calc(100% * $i / 12) !important;
+      flex-basis: calc(100% * $i / 12) !important;
+      flex-grow: 1;
+    }
+  }
+  .col-md-#{$i} {
+    @media screen and (max-width: $lg) {
+      max-width: calc(100% * $i / 12) !important;
+      flex-basis: calc(100% * $i / 12) !important;
+      flex-grow: 1;
+    }
+  }
+  .col-sm-#{$i} {
+    @media screen and (max-width: $md) {
+      max-width: calc(100% * $i / 12) !important;
+      flex-basis: calc(100% * $i / 12) !important;
+      flex-grow: 1;
+    }
+  }
+  // }
+}
+// padding and margin section
+.p-auto {
+  padding: auto;
+}
+.pl-auto {
+  padding-left: auto;
+}
+.pr-auto {
+  padding-right: auto;
+}
+.px-auto {
+  padding-left: auto;
+  padding-right: auto;
+}
+.pt-auto {
+  padding-top: auto;
+}
+.pb-auto {
+  padding-bottom: auto;
+}
+.py-auto {
+  padding-bottom: auto;
+  padding-top: auto;
+}
+.m-auto {
+  margin: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.my-auto {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+@for $i from 0 through 100 {
+  .p-#{$i} {
+    padding: calc($genSpacing * $i);
+  }
+  .pl-#{$i} {
+    padding-left: calc($genSpacing * $i);
+  }
+  .pr-#{$i} {
+    padding-right: calc($genSpacing * $i);
+  }
+  .px-#{$i} {
+    padding-left: calc($genSpacing * $i);
+    padding-right: calc($genSpacing * $i);
+  }
+  .pt-#{$i} {
+    padding-top: calc($genSpacing * $i);
+  }
+  .pb-#{$i} {
+    padding-bottom: calc($genSpacing * $i);
+  }
+  .py-#{$i} {
+    padding-bottom: calc($genSpacing * $i);
+    padding-top: calc($genSpacing * $i);
+  }
+  .m-#{$i} {
+    margin: calc($genSpacing * $i);
+  }
+  .ml-#{$i} {
+    margin-left: calc($genSpacing * $i);
+  }
+  .mr-#{$i} {
+    margin-right: calc($genSpacing * $i);
+  }
+  .mx-#{$i} {
+    margin-right: calc($genSpacing * $i);
+    margin-left: calc($genSpacing * $i);
+  }
+  .mt-#{$i} {
+    margin-top: calc($genSpacing * $i);
+  }
+  .mb-#{$i} {
+    margin-bottom: calc($genSpacing * $i);
+  }
+  .my-#{$i} {
+    margin-bottom: calc($genSpacing * $i);
+    margin-top: calc($genSpacing * $i);
+  }
+}
+// font section
+
+html {
+  font-size: 10px;
+  @media (min-width: $sm) {
+    font-size: 12px;
+  }
+  @media (min-width: $md) {
+    font-size: 14px;
+  }
+  @media (min-width: $lg) {
+    font-size: 16px;
+  }
+}
+.text-brand {
+  color: $brand;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-thin {
+  font-weight: 300;
+}
+
+// alighnemnt
+$alignments: ("center", "left", "right", "justify");
+@each $alignment in $alignments {
+  .text-#{$alignment} {
+    text-align: #{$alignment};
+  }
+}
+
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "brand": $brand,
+);
+@each $color, $val in $colors {
+  .text-#{$color} {
+    color: #{$val};
+  }
+}
+
+// display
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+
+// visibility
+.visible {
+  visibility: visible;
+}
+.invisible {
+  visibility: hidden;
+}
+
+// others
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// buttons style
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  margin-top: 3px;
+}
+.btn-brand {
+  background: $brand;
+  border: 2px solid $brand;
+  color: white;
+  &:hover {
+    background: inherit;
+    color: inherit;
+  }
+}
+.btn-outline-brand {
+  background-color: inherit;
+  border: 2px solid $brand;
+  transition: all 0.25s ease-in-out;
+  &:hover {
+    background: $brand;
+    color: white;
+  }
+}
+
+$roundeds: (
+  "xs": 2px,
+  "sm": 4px,
+  "md": 6px,
+  "lg": 8px,
+  "xl": 10px,
+  "xxl": 12px,
+  "full": 50%,
+);
+@each $brk, $val in $roundeds {
+  .rounded-#{$brk} {
+    border-radius: #{$val};
+  }
+}
+
+// width height section
+@for $i from 1 through 100 {
+  .w-#{$i} {
+    width: calc(100% * $i / 100);
+  }
+  .h-#{$i} {
+    height: calc(100% * $i / 100);
+  }
+}
+
+// form section
+.form-control {
+  width: 100%;
+  border: 1px solid rgba(48, 48, 48, 0.451);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: large;
+  &:focus {
+    outline: 2px solid $brand;
+  }
+}
+
+// text decorations
+.underline {
+  text-decoration: underline;
+}
+
+// border section
+@for $i from 0 through 20 {
+  .border-#{$i} {
+    border-color: rgba(228, 228, 228, 0.486);
+    border-width: calc($i * 1px);
+  }
+  .border-b-#{$i} {
+    border-bottom: calc($i * 1px) solid rgba(228, 228, 228, 0.486);
+  }
+  .border-t-#{$i} {
+    border-color: rgba(228, 228, 228, 0.486);
+    border-top-width: calc($i * 1px);
+  }
+  .border-l-#{$i} {
+    border-color: rgba(228, 228, 228, 0.486);
+    border-left-width: calc($i * 1px);
+  }
+  .border-r-#{$i} {
+    border-right-width: calc($i * 1px);
+    border-color: rgba(228, 228, 228, 0.486);
+  }
+}

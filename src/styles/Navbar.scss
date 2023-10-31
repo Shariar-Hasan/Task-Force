@@ -1,0 +1,93 @@
+@import "./Variables.scss";
+.navbar {
+  z-index: 999;
+  color: $text;
+  padding: 1rem 0;
+  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.485);
+  backdrop-filter: blur(40px);
+
+  @media screen and (max-width: $sm) {
+    backdrop-filter: blur(0);
+    background: $primary;
+  }
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    color: gray;
+    position: relative;
+    li {
+      margin-right: 1rem;
+      &::after {
+        content: "";
+        top: 100%;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: $brand;
+        transition: all .25s ease-in-out;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        text-decoration: none;
+        letter-spacing: 1px;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+    @media screen and (max-width: $sm) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      flex-direction: column;
+      height: 100vh;
+      width: 200px;
+      padding: 20px 30px;
+      background-color: $primary;
+      display: none;
+      transition: all 0.25s ease-in-out;
+      li {
+        padding: 10px 0;
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+.menu-button {
+  cursor: pointer;
+  font-size: 13px;
+}
+.close-button {
+  position: absolute;
+  display: none;
+  top: 20px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.menu-button,
+.close-button {
+  display: none;
+  @media screen and (max-width: $sm) {
+    display: block;
+  }
+}
