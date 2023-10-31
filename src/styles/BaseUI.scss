@@ -229,6 +229,7 @@ $colors: (
   "primary": $primary,
   "secondary": $secondary,
   "brand": $brand,
+  "muted": rgba(44, 44, 44, 0.622),
 );
 @each $color, $val in $colors {
   .text-#{$color} {

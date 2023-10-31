@@ -1,0 +1,16 @@
+.sub-card {
+  text-align: center;
+  padding: 40px;
+  .plan-icon {
+    margin: 10px auto;
+  }
+  ul {
+    text-align: left;
+    padding: 20px;
+    list-style-type: none;
+    margin: 0;
+    li{
+        margin: 10px 0;
+    }
+  }
+}

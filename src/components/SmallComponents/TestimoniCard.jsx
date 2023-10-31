@@ -1,16 +1,15 @@
 import { BiSolidQuoteLeft } from "react-icons/bi"
-const TestimoniCard = () => {
+const TestimoniCard = ({ index, testimonial: { quote, author, profession, avater } }) => {
     return (
-        <div className="test-card">
-            <span><BiSolidQuoteLeft /></span>
-            <img className="test-avater rounded-full" src="https://i.pravatar.cc/80?img=1" alt="random placeholder" />
+        <div className="test-card w-100">
+            <span className="quote"><BiSolidQuoteLeft className="text-brand" /></span>
+            <img className="test-avater rounded-full" src={avater + (index + 1)} alt="random placeholder" />
             <div className="p-5">
-
-                <p className="font-thin">Complete recommendation for the Company from my side</p>
+                <p className="font-thin">{quote}</p>
                 <hr className="my-2" />
-                <strong>Json Akter</strong>
+                <strong>{author}</strong>
                 <br />
-                <span>CEO, Chief Minister</span>
+                <span className="test-profession">{profession}</span>
             </div>
         </div>
     )

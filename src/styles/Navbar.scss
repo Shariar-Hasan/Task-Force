@@ -35,7 +35,7 @@
         height: 2px;
         width: 0;
         background: $brand;
-        transition: all .25s ease-in-out;
+        transition: all 0.25s ease-in-out;
       }
       &:hover::after {
         width: 100%;
@@ -61,13 +61,16 @@
       width: 200px;
       padding: 20px 30px;
       background-color: $primary;
-      display: none;
+      // display: none;
+      transform: translateX(100%) rotateY(90deg);
+      perspective: 100000px;
       transition: all 0.25s ease-in-out;
       li {
         padding: 10px 0;
       }
       &.active {
-        display: block;
+        // display: block;
+        transform: none;
       }
     }
   }
@@ -89,5 +92,13 @@
   display: none;
   @media screen and (max-width: $sm) {
     display: block;
+  }
+}
+.logo {
+  display: flex;
+  span {
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: $brand;
   }
 }

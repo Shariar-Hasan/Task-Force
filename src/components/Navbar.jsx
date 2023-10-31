@@ -8,7 +8,8 @@ export const Navbar = () => {
         <nav className="navbar sticky-top">
             <div className="container navbar-container">
                 <div className="logo">
-                    <img src="https://img.logoipsum.com/298.svg" alt="Placeholder logo" />
+                    <img src="https://img.logoipsum.com/296.svg" alt="Placeholder logo" />
+                    <span>TaskForce</span>
                 </div>
                 <div>
                     <span className="menu-button" onClick={() => setIsOpen(true)}>

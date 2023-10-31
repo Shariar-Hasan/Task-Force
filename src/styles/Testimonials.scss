@@ -2,15 +2,34 @@
   background: $primary;
   position: relative;
   border-radius: 5px;
+  border-right: 8px solid $brand;
+  border-bottom-right-radius: 50px;
   text-align: justify;
   box-shadow: 2px 2px 10px gray;
+  height: 100%;
+  .test-profession{
+    font-size: small;
+    color: gray;
+  }
+  .quote {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+  }
   .test-avater {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
   }
-  p{
+  p {
     margin-top: 30px;
+    letter-spacing: 1px;
   }
+}
+.shadow-md{
+    box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.518);
+}
+.test-slider-section{
 }

@@ -8,7 +8,10 @@ const About = () => {
       <div className="container my-30">
         <Heading id="about">About Us</Heading>
         <Fade >
-          <SubHeading>Our Misssion</SubHeading>
+          <div className="px-3">
+            <SubHeading>Our Misssion</SubHeading>
+          </div>
+          
         </Fade>
         <div className="row">
           <div className="col-md-6 col-lg-6 col-12 p-3">

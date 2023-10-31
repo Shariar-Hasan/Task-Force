@@ -5,7 +5,9 @@
 @import "./Services.scss";
 @import "./Contact.scss";
 @import "./About.scss";
+@import "./Planning.scss";
 @import "./Testimonials.scss";
+@import "./SubscribeSection.scss";
 @import "./Footer.scss";
 @import "./Variables.scss";
 
@@ -149,4 +151,7 @@ body::-webkit-scrollbar {
 }
 .clicked:active {
   transform: scale(0.98);
+}
+.bg-transparent{
+  background: transparent;
 }
